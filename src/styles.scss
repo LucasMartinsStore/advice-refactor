@@ -1,1 +1,22 @@
 /* You can add global styles to this file, and also import other style files */
+@import "tailwindcss";
+@plugin "daisyui";
+
+:root {
+  /* color primary */
+  --color-light-cyan: hsl(193, 38%, 86%);
+  --color-neon-green: hsl(150, 100%, 66%);
+
+  /* color Neutral */
+  --color-grayish-blue: hsl(217, 19%, 38%);
+  --color-dark-grayish-blue: hsl(217, 19%, 24%);
+  --color-dark-blue: hsl(218, 23%, 16%);
+
+  /*Typography */
+  --typography-family: "Manrope", sans-serif;
+  --typography-standard: 2.8rem;
+}
+
+html {
+  font-family: var(--typography-standard);
+}
