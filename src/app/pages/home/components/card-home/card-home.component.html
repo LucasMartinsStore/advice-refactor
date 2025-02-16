@@ -1,9 +1,8 @@
 <div class="flex justify-center items-center min-h-screen bg-color-card">
-  <div *ngIf="isLoading" class="loading loading-spinner loading-lg"></div>
-  <div
-    *ngIf="!isLoading && cardList && cardList.slip"
-    class="card bg-base-100 w-96 shadow-xl"
-  >
+  @if (isLoading) {
+  <div class="loading loading-spinner text-white loading-lg"></div>
+  } @if (!isLoading && cardList && cardList.slip) {
+  <div class="card bg-base-100 w-96 shadow-xl">
     <div class="card-body flex justify-center flex-col items-center">
       <h2 class="card-title text-center">
         Conselho # {{ cardList.slip.idConselho }}
@@ -26,5 +25,6 @@
       </div>
     </div>
   </div>
+  }
 </div>
 ```
