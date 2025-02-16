@@ -18,6 +18,7 @@ export class HomePageComponent implements OnInit, OnDestroy {
   private _subs = new Subscription();
 
   private slipService = inject(SlipService);
+
   ngOnInit(): void {
     this._getSlipData();
   }
@@ -26,9 +27,14 @@ export class HomePageComponent implements OnInit, OnDestroy {
     this._subs.unsubscribe();
   }
   private _getSlipData(): void {
-    let sub = this.slipService.getSlip().subscribe((slip) => {
-      this.isLoading = false;
-      this.SlipList = slip;
+    let sub = this.slipService.getSlip().subscribe({
+      next: (slip) => {
+        this.isLoading = false;
+        this.SlipList = slip;
+      },
+      error: (error) => {
+        console.error(error);
+      },
     });
     this._subs.add(sub);
   }
