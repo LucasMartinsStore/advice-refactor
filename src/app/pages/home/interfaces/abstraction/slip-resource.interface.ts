@@ -1,6 +1,7 @@
 import { Observable } from 'rxjs';
-import { SlipDTO } from '../dtos/slip-dto.interface';
+
+import { Slip } from '../model/slip.interface';
 
 export interface SlipResource {
-  getSlip(): Observable<SlipDTO>;
+  getSlip(): Observable<Slip>;
 }

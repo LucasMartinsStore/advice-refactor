@@ -1,1 +1,5 @@
-<app-card-home></app-card-home>
+<app-card-home
+  [cardList]="SlipList"
+  (cardClick)="onCardClick()"
+  [isLoading]="isLoading"
+></app-card-home>

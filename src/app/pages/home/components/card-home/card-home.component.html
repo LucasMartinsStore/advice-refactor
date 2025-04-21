@@ -1,1 +1,30 @@
-<span>oiii</span>
+<div class="flex justify-center items-center min-h-screen bg-color-card">
+  @if (isLoading) {
+  <div class="loading loading-spinner text-white loading-lg"></div>
+  } @if (!isLoading && cardList && cardList.slip) {
+  <div class="card bg-base-100 w-96 shadow-xl">
+    <div class="card-body flex justify-center flex-col items-center">
+      <h2 class="card-title text-center">
+        Conselho # {{ cardList.slip.idConselho }}
+      </h2>
+      <p class="text-center">
+        {{ cardList.slip.conselho }}
+      </p>
+      <div class="card-actions justify-end">
+        <button
+          class="btn mt-4 btn-active btn-secondary"
+          (click)="cardClick.emit()"
+        >
+          <img
+            src="../../../../../assets/image/icon-dice.svg"
+            aria-hidden="true"
+            class="svg-icon"
+          />
+          Mais Conselhos
+        </button>
+      </div>
+    </div>
+  </div>
+  }
+</div>
+```
